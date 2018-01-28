@@ -7,6 +7,7 @@ import { DragDropContext } from "react-dnd";
 import HTML5Backend from "react-dnd-html5-backend";
 import BoardSquare from "./BoardSquare";
 
+
 class Board extends Component {
   renderSquare(i) {
     const x = i % 8;
