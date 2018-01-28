@@ -4,6 +4,6 @@ import Board from "./Board";
 import "./index.css";
 
 ReactDOM.render(
-  <Board knightPosition={[3, 4]} />,
+  <Board knightPosition={[1, 4]} />,
   document.getElementById("root")
 );
