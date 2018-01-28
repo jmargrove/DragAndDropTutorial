@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import { ItemTypes } from "./Constants.js";
+import { ItemTypes } from "./Constants";
 import { DragSource } from "react-dnd";
 
 const knightSource = {
@@ -19,18 +19,17 @@ function collect(connect, monitor) {
 class Knight extends Component {
   render() {
     const { connectDragSource, isDragging } = this.props;
-    return (
-      <span
+    return connectDragSource(
+      <div
         style={{
           opacity: isDragging ? 0.5 : 1,
-          fontSize: "55px",
-          marginBottom: "11px",
+          fontSize: 55,
           fontWeight: "bold",
           cursor: "move"
         }}
       >
         ♘
-      </span>
+      </div>
     );
   }
 }
