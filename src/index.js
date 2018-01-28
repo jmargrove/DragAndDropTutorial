@@ -3,7 +3,16 @@ import ReactDOM from "react-dom";
 import Board from "./Board";
 import "./index.css";
 
-ReactDOM.render(
-  <Board knightPosition={[1, 4]} />,
-  document.getElementById("root")
+const rootEL = document.getElementById("root");
+
+const observe = receive => {
+  setInterval(
+    () =>
+      receive([Math.floor(Math.random() * 8), Math.floor(Math.random() * 8)]),
+    1000
+  );
+};
+
+observe(knightPosition =>
+  ReactDOM.render(<Board knightPosition={knightPosition} />, rootEL)
 );
