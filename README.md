@@ -4,6 +4,8 @@ A finished and working drag and drop tutorial from [react-dnd tutorial](https://
 
 Simple chess board with one Knight in possition, drag and drop the Knight on the avalible squares on the board. Avalible squares are highlighted in yellow. Squares that are not avalible with turn red when dragged over. When a square is avalible, and hovered over it will turn green. Simples. 
 
+[Click to view the web app deployed on git-pages](https://t03jam8.github.io/DragAndDropTutorial/)
+
 To get working:
 - clone 
 - npm install 
