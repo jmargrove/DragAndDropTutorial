@@ -2,9 +2,11 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import Square from "./Square";
 import Knight from "./Knight";
-import { moveKnight } from "./Game";
+import { moveKnight, canMoveKnight } from "./Game";
+import HTML5Backend from "react-dnd-html5-backend";
+import { DragDropContext } from "react-dnd";
 
-export default class Board extends Component {
+class Board extends Component {
   renderSquare(i) {
     const x = i % 8;
     const y = Math.floor(i / 8);
@@ -25,7 +27,9 @@ export default class Board extends Component {
   }
 
   handleSquareClick(toX, toY) {
-    moveKnight(toX, toY);
+    if (canMoveKnight(toX, toY)) {
+      moveKnight(toX, toY);
+    }
   }
 
   render() {
@@ -53,3 +57,5 @@ export default class Board extends Component {
 Board.propTypes = {
   knightPosition: PropTypes.arrayOf(PropTypes.number.isRequired).isRequired
 };
+
+export default DragDropContext(HTML5Backend)(Board);
